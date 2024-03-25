@@ -26,7 +26,7 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-
+    "debug_toolbar",
 ]
 
 LOCAL_APPS = [
@@ -38,6 +38,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "debug_toolbar.middleware.DebugToolbarMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -144,3 +145,9 @@ LOGGING = {
 ADMIN_URL = env.str("ADMIN_URL", "admin/")
 
 AUTH_USER_MODEL = "users.User"
+
+INTERNAL_IPS = [
+    "127.0.0.1",
+    "localhost",
+    "[::1]",
+]
