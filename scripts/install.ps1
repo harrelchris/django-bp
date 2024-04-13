@@ -19,8 +19,8 @@ if (Test-Path db.sqlite3) {
 python app\manage.py makemigrations
 python app\manage.py migrate
 
-python app/manage.py createsuperuser --username root --email root@email.com --noinput
-python app/manage.py createsuperuser --username sudo --email sudo@email.com --noinput
-python app/manage.py createsuperuser --username user --email user@email.com --noinput
+python app\manage.py createsuperuser --username root --email root@email.com --noinput
+python app\manage.py createsuperuser --username sudo --email sudo@email.com --noinput
+python app\manage.py createsuperuser --username user --email user@email.com --noinput
 
-python app/manage.py collectstatic --noinput
+python app\manage.py collectstatic --noinput
